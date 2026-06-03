@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hediye Rehberi uygulaması gizlilik politikası - Kişisel verilerinizin nasıl işlendiğini öğrenin." />
+  <title>Gizlilik Politikası | Hediye Rehberi</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:       #C4704A;
+      --primary-light: #E8A882;
+      --bg:            #FEFCFA;
+      --surface:       #FFF8F4;
+      --border:        rgba(196, 112, 74, 0.18);
+      --text-primary:  #2D1B0E;
+      --text-secondary:#7A5C46;
+      --gradient-from: #FBF0EA;
+      --gradient-to:   #F5E6DB;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(160deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+      min-height: 100vh;
+      color: var(--text-primary);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-badge {
+      width: 38px; height: 38px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-badge svg { fill: #fff; width: 20px; height: 20px; }
+    .header-inner h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+    .header-inner span {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      display: block;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 800px;
+      margin: 40px auto 0;
+      padding: 0 24px;
+    }
+    .hero-card {
+      background: linear-gradient(135deg, rgba(196,112,74,0.1) 0%, rgba(232,168,130,0.06) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 28px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .hero-icon {
+      flex-shrink: 0;
+      width: 52px; height: 52px;
+      background: rgba(196,112,74,0.12);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-icon svg { fill: var(--primary); width: 26px; height: 26px; }
+    .hero-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .hero-date {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(196,112,74,0.12);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 800px;
+      margin: 32px auto 60px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 24px;
+      transition: box-shadow 0.2s;
+    }
+    .section:hover { box-shadow: 0 6px 28px rgba(196,112,74,0.1); }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .section-icon {
+      width: 34px; height: 34px;
+      background: rgba(196,112,74,0.1);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-icon svg { fill: var(--primary); width: 18px; height: 18px; }
+    .section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .section p, .section li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .section ul {
+      list-style: none;
+      margin-top: 8px;
+    }
+    .section ul li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .section a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER NOTE ── */
+    .footer-note {
+      max-width: 800px;
+      margin: 0 auto 24px;
+      padding: 0 24px;
+    }
+    .footer-note-inner {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 24px 40px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.2rem; }
+      .section { padding: 18px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-badge">
+      <svg viewBox="0 0 24 24"><path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4C8.9 3 8 3.9 8 5v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-8-2h4v2h-4V5zm8 15H4V9h4v2h2V9h4v2h2V9h4v11z"/></svg>
+    </div>
+    <div>
+      <h1>Hediye Rehberi</h1>
+      <span>hediyerehberi.com.tr</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-card">
+    <div class="hero-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4c1.4 0 2.8 1.1 2.8 2.5v.5H9.2v-.5C9.2 6.1 10.6 5 12 5zm0 9c-1.4 0-2.8-1.1-2.8-2.5S10.6 9 12 9s2.8 1.1 2.8 2.5S13.4 14 12 14z"/></svg>
+    </div>
+    <div>
+      <div class="hero-title">Gizlilik Politikası</div>
+      <div class="hero-date">Son güncelleme: Haziran 2025</div>
+      <div class="badge">KVKK Uyumlu</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+      <h2>1. Genel Bilgiler</h2>
+    </div>
+    <p>Hediye Rehberi uygulaması, kullanıcılarına kişiselleştirilmiş hediye önerileri sunmak amacıyla geliştirilmiştir. Bu gizlilik politikası; uygulamayı kullandığınızda hangi verileri topladığımızı, bu verileri nasıl kullandığımızı ve koruduğumuzu açıklamaktadır.</p>
+    <br/>
+    <p>Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div>
+      <h2>2. Topladığımız Veriler</h2>
+    </div>
+    <p>Uygulamamız aşağıdaki verileri toplayabilir:</p>
+    <ul>
+      <li>E-posta adresi (hesap oluşturma ve kimlik doğrulama için)</li>
+      <li>Ad Soyad (opsiyonel, profil bilgisi için)</li>
+      <li>Hediye tercihleri ve arama geçmişi (kişiselleştirilmiş öneriler için)</li>
+      <li>Favori ürünler ve özel gün bilgileri (kullanıcı tarafından girilir)</li>
+      <li>Cihaz bilgileri (uygulama performansını iyileştirmek için)</li>
+      <li>Reklam kimliği (AdMob reklam hizmetleri için)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <h2>3. Verilerin Kullanım Amacı</h2>
+    </div>
+    <ul>
+      <li>Kişiselleştirilmiş hediye önerileri sunmak</li>
+      <li>Hesabınızı yönetmek ve güvenliğini sağlamak</li>
+      <li>Favori ürünlerinizi ve özel günlerinizi kaydetmek</li>
+      <li>Uygulama kalitesini ve kullanıcı deneyimini iyileştirmek</li>
+      <li>Yasal yükümlülükleri yerine getirmek</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+      <h2>4. Reklam Hizmetleri (Google AdMob)</h2>
+    </div>
+    <p>Uygulamamız Google AdMob reklam hizmetini kullanmaktadır. AdMob, size ilgi alanlarınıza göre reklamlar göstermek amacıyla belirli veriler toplayabilir:</p>
+    <ul>
+      <li>Reklam kimliği (IDFA / GAID)</li>
+      <li>Uygulama kullanım verileri</li>
+    </ul>
+    <br/>
+    <p>Google'ın gizlilik politikasına ulaşmak için: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></div>
+      <h2>5. Veri Paylaşımı</h2>
+    </div>
+    <p>Kişisel verilerinizi şu durumlar dışında üçüncü taraflarla paylaşmayız:</p>
+    <ul>
+      <li>Yasal zorunluluk halinde (mahkeme kararı, yasal süreç)</li>
+      <li>Hizmet sağlayıcılarımızla (Supabase – veritabanı, Google AdMob – reklam)</li>
+      <li>Açık rızanızın olduğu durumlarda</li>
+    </ul>
+    <br/>
+    <p>Verilerinizi asla satmayız veya ticari amaçla üçüncü taraflara devretmeyiz.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg></div>
+      <h2>6. Veri Güvenliği</h2>
+    </div>
+    <ul>
+      <li>SSL/TLS şifrelemesi ile veri iletimi</li>
+      <li>Supabase güvenli altyapısında depolama</li>
+      <li>Şifreler hiçbir zaman düz metin olarak saklanmaz</li>
+      <li>Düzenli güvenlik denetimleri</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C7.81 18 6 15.21 6 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg></div>
+      <h2>7. Çocukların Gizliliği</h2>
+    </div>
+    <p>Uygulamamız 13 yaşından küçük çocuklara yönelik değildir ve bilerek bu yaş grubundan kişisel veri toplamayız. 13 yaşından küçük bir çocuğun bize veri sağladığını fark ederseniz, lütfen bizimle iletişime geçin; bu verileri derhal sileceğiz.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+      <h2>8. Kullanıcı Hakları</h2>
+    </div>
+    <p>Verilerinize ilişkin aşağıdaki haklara sahipsiniz:</p>
+    <ul>
+      <li>Verilerinize erişim hakkı</li>
+      <li>Verilerinizi düzeltme hakkı</li>
+      <li>Verilerinizin silinmesini talep etme hakkı</li>
+      <li>Veri işlemeyi kısıtlama hakkı</li>
+    </ul>
+    <br/>
+    <p>Hesabınızı ve tüm verilerinizi silmek için uygulama içindeki profil bölümünden "Hesabı Sil" seçeneğini kullanabilir ya da bizimle iletişime geçebilirsiniz.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3S9.66 12 8 12s-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/></svg></div>
+      <h2>9. İletişim</h2>
+    </div>
+    <p>Gizlilik politikamız veya verilerinizle ilgili sorularınız için:</p>
+    <br/>
+    <ul>
+      <li>📧 E-posta: <a href="mailto:destek@hediyerehberi.com.tr">destek@hediyerehberi.com.tr</a></li>
+      <li>🌐 Web: <a href="https://hediyerehberi.com.tr" target="_blank" rel="noopener">hediyerehberi.com.tr</a></li>
+    </ul>
+    <br/>
+    <p>Taleplerinize en kısa sürede yanıt vereceğiz.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER NOTE -->
+<div class="footer-note">
+  <div class="footer-note-inner">
+    Hediye Rehberi uygulamasını kullanarak bu gizlilik politikasını okuduğunuzu ve kabul ettiğinizi onaylarsınız.
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Hediye Rehberi &nbsp;·&nbsp; <a href="index.html">Ana Sayfa</a> &nbsp;·&nbsp; <a href="mailto:destek@hediyerehberi.com.tr">İletişim</a></p>
+</footer>
+
+</body>
+</html>
