@@ -1,1 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Instax Mini 12 Kamera",
+    "brand": "Fujifilm",
+    "price": 3499.00,
+    "image_url": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500",
+    "amazon_link": "https://www.amazon.com.tr/dp/B0BXS1H6S1",
+    "category": "SEVGİLİ",
+    "style": "Vintage"
+  },
+  {
+    "id": 2,
+    "name": "Deri Klasik Cüzdan",
+    "brand": "Premium Brand",
+    "price": 899.00,
+    "image_url": "https://images.unsplash.com/photo-1627124765135-5657d93f9c59?w=500",
+    "amazon_link": "https://www.amazon.com.tr/dp/example_cuzdan",
+    "category": "BABA",
+    "style": "Klasik"
+  }
+]
 
