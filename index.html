@@ -1,3 +1,14 @@
+Google AdSense hesabınızın ve dikey kaydırma (scroll) sorununun sorunsuz çalışması için kodun **tamamen düzenlenmiş ve temizlenmiş hali** aşağıdadır.
+
+Bu sürümde:
+
+1. `*` (global) seçicideki dikey kaydırmayı kilitleyen `transition` kaldırıldı; bunun yerine sadece buton, kart ve link gibi etkileşimli elemanlara özel olarak tanımlandı.
+2. `body` etiketine `overflow-y: auto;` eklenerek kaydırma mekanizması güvenceye alındı.
+3. Google AdSense kod bloğunuz, Google'ın resmi yerleşim standartlarına uygun şekilde, sayfa düzenini bozmayacak ve esnek (`auto`) formatta çalışacak biçimde optimize edildi.
+
+İşte projenizde doğrudan kullanabileceğiniz eksiksiz kod:
+
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -404,3 +415,5 @@
   </script>
 </body>
 </html>
+
+```
